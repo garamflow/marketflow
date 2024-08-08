@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
+			<body className={`${inter.className} max-w-screen-md mx-auto`}>
 				<ThemeClient>{children}</ThemeClient>
 			</body>
 		</html>
