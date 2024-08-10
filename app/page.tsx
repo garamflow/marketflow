@@ -9,9 +9,12 @@ export default function Home() {
 				<h2>마켓플로우에 오신것을 환영합니다.</h2>
 			</div>
 			<div className='flex flex-col gap-2'>
-				<button className='btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg'>
-					<Link href='/create-account'>시작하기</Link>
-				</button>
+				<Link
+					href='/register'
+					className='flex justify-center items-center'
+				>
+					<button className='primary-btn'>시작하기</button>
+				</Link>
 				<div className='flex gap-3'>
 					<span>계정이 존재한다면?</span>
 					<Link
