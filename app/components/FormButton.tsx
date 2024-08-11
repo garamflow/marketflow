@@ -1,18 +1,21 @@
+"use client";
+import { useFormStatus } from "react-dom";
+
 interface FormButtonProps {
 	text: string;
-	loading: boolean;
-	disabled?: boolean;
 	className?: string;
 }
 
-const FormButton = ({ text, loading, disabled, className }: FormButtonProps) => {
+const FormButton = ({ text, className }: FormButtonProps) => {
+	const { pending } = useFormStatus();
+
 	return (
 		<button
 			className={`primary-btn ${className}`}
-			disabled={disabled}
+			disabled={pending}
 		>
-			<span className={`${loading ? "loading loading-spinner" : ""}`}></span>
-			{loading ? "로딩중" : text}
+			<span className={`${pending ? "loading loading-spinner" : ""}`}></span>
+			{pending ? "로딩중" : text}
 		</button>
 	);
 };

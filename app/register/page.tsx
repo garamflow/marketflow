@@ -14,30 +14,32 @@ const Register = () => {
 					type='text'
 					placeholder='사용자 이름'
 					required
+					name='username'
 					errors={["사용자 이름이 너무 짧습니다."]}
 				/>
 				<FormInput
 					type='email'
 					placeholder='이메일'
 					required
+					name='email'
 					errors={[]}
 				/>
 				<FormInput
 					type='password'
 					placeholder='비밀번호'
 					required
+					name='password'
 					errors={[]}
 				/>
 				<FormInput
 					type='password'
 					placeholder='비밀번호 확인하기'
 					required
+					name='checkPassword'
 					errors={[]}
 				/>
 				<FormButton
 					className='lg:btn-md'
-					loading={false}
-					disabled={false}
 					text='계정 생성하기'
 				/>
 			</form>
