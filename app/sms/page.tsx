@@ -1,6 +1,5 @@
 import FormButton from "@/app/components/FormButton";
 import FormInput from "@/app/components/FormInput";
-import SocialLogin from "@/app/components/SocialLogin";
 
 const SMSLogin = () => {
 	return (
@@ -14,19 +13,17 @@ const SMSLogin = () => {
 					type='number'
 					placeholder='전화번호'
 					required
+					name='phone'
 					errors={[]}
 				/>
 				<FormInput
 					type='number'
 					placeholder='알맞은 코드를 입력해주세요.'
 					required
+					name='code'
 					errors={[]}
 				/>
-				<FormButton
-					loading={false}
-					disabled={false}
-					text='인증하기'
-				/>
+				<FormButton text='인증하기' />
 			</form>
 		</div>
 	);
