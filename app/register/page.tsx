@@ -3,6 +3,7 @@ import FormButton from "@/app/components/FormButton";
 import FormInput from "@/app/components/FormInput";
 import SocialLogin from "@/app/components/SocialLogin";
 import { createAccount } from "@/app/register/actions";
+import { PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH } from "@/lib/constants";
 import { useFormState } from "react-dom";
 
 const Register = () => {
@@ -24,8 +25,6 @@ const Register = () => {
 					required
 					name='username'
 					errors={state?.fieldErrors.username}
-					minLength={4}
-					maxLength={10}
 				/>
 				<FormInput
 					type='email'
@@ -40,8 +39,8 @@ const Register = () => {
 					required
 					name='password'
 					errors={state?.fieldErrors.password}
-					minLength={8}
-					maxLength={16}
+					minLength={PASSWORD_MIN_LENGTH}
+					maxLength={PASSWORD_MAX_LENGTH}
 				/>
 				<FormInput
 					type='password'
@@ -49,8 +48,8 @@ const Register = () => {
 					required
 					name='confirmPassword'
 					errors={state?.fieldErrors.confirmPassword}
-					minLength={8}
-					maxLength={16}
+					minLength={PASSWORD_MIN_LENGTH}
+					maxLength={PASSWORD_MAX_LENGTH}
 				/>
 				<FormButton
 					className='lg:btn-md'
