@@ -28,5 +28,5 @@ model SMSToken {
   updated_at DateTime @updatedAt
 
   userId Int
-  user User @relation("UserToken", fields: [userId], references: [id])
+  user User @relation("UserToken", fields: [userId], references: [id], onDelete: Cascade)
 }
