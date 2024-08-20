@@ -1,8 +1,10 @@
 "use server";
 import { EMAIL_TYPE_ERROR, INPUT_EMPTY_ERROR, PASSWORD_LENGTH_ERROR, PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH, PASSWORD_REGEX, PASSWORD_REGEX_ERROR, PASSWORD_TYPE_ERROR } from "@/lib/constants";
 import db from "@/lib/db";
+import getSession from "@/lib/session";
 import { z } from "zod";
 import bcrypt from "bcrypt";
+import { redirect } from "next/navigation";
 
 const checkUsername = (username: string) => !username.includes("#");
 const checkPasswords = ({ password, confirmPassword }: { password: string; confirmPassword: string }) => password === confirmPassword;
@@ -72,5 +74,10 @@ export const createAccount = async (prevState: any, formData: FormData) => {
 				id: true,
 			},
 		});
+
+		const session = await getSession();
+		session.id = user.id;
+		await session.save();
+		redirect("/profile");
 	}
 };
