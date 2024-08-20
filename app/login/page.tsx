@@ -10,7 +10,7 @@ const Login = () => {
 	const [state, dispatch] = useFormState(login, null);
 
 	return (
-		<div className='flex flex-col gap-10 py-8 px-5'>
+		<div className='flex flex-col gap-10 py-8 px-5 min-h-screen'>
 			<div className='flex flex-col gap-2 *:font-medium'>
 				<h1 className='text-2xl'>로그인</h1>
 				<h2 className='text-xl'>이메일로 로그인하기</h2>

@@ -10,7 +10,7 @@ const Register = () => {
 	const [state, dispatch] = useFormState(createAccount, null);
 
 	return (
-		<div className='flex flex-col gap-10 py-8 px-5'>
+		<div className='flex flex-col gap-10 py-8 px-5 min-h-screen'>
 			<div className='flex flex-col gap-2 *:font-medium'>
 				<h1 className='text-2xl'>환영합니다!</h1>
 				<h2 className='text-xl'>아래 빈 칸들을 모두 채워주세요.</h2>
