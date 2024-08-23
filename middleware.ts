@@ -17,11 +17,11 @@ export async function middleware(request: NextRequest) {
 	const isPublicRoute = publicOnlyUrls[request.nextUrl.pathname];
 
 	if (!session.id && !isPublicRoute) {
-		return NextResponse.redirect(new URL("/login", request.url));
+		return NextResponse.redirect(new URL("/", request.url));
 	}
 
-	if (!session.id && isPublicRoute) {
-		return NextResponse.redirect(new URL("/products", request.url));
+	if (session.id && !!isPublicRoute) {
+		return NextResponse.redirect(new URL("/home", request.url));
 	}
 }
 
