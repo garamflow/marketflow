@@ -5,7 +5,7 @@ const SocialLogin = () => {
 		<div className='w-full flex flex-col gap-3'>
 			<Link
 				className='primary-btn lg:btn-md'
-				href='/github/start'
+				href='/auth/github/login'
 			>
 				<span>
 					<svg
